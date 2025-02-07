@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="calculator.css">
+<script src="calculator.js"></script>
+    <title>My Calculator</title>
+</head>
+<body>
+    
+    <h1 style="color: aqua; text-align: center;">My Calculator App</h1>
+
+
+    <form action="">
+        <table style="width: 100%;">
+
+            <tr style="border: 1px solid;">
+                <td colspan="">
+
+                    <input id="display" type="text" style="display: block; font-size: 50px; width: 99.6%; height: 50%; caret-color: transparent;">
+
+                </td>
+            </tr>
+
+            <tr id="element_2">
+                <td style="border: 2px solid;" >
+                    <div style="display: flex; justify-content: left;">
+                        <div style="display: flex; justify-content: space-between;" id="function_types">
+                            <div class="dropdown" style="padding: 20px;" >
+                                Trigonometry
+                                <div class="dropdown-menu" id="trigonometry">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <button type="button" style="padding: 10px 10px;" onclick="trigonometry_func('Sin()')">Sin()</button>
+                                            </td>
+                                            <td>
+                                                <button type="button"  style="padding: 10px ;" onclick="trigonometry_func('Cos()')">Cos()</button>
+                                            
+                                            </td>
+                                            <td><button type="button"  style="padding: 10px ;" onclick="trigonometry_func('Tan()')">Tan()</button></td>
+                                           
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <button type="button"  style="padding: 10px  10px ;" onclick="trigonometry_func('Cosec()')">Cosec()</button>
+                                            </td>
+                                            <td>
+                                                <button type="button"  style="padding: 10px 10px ;" onclick="trigonometry_func('Sec()')">Sec()</button>
+                                            
+                                            </td>
+                                            <td><button type="button"  style="padding: 10px  10px ;" onclick="trigonometry_func('Cot()')">Cot()</button></td>
+                                           
+
+                                        </tr>
+                                        
+                                        
+                                        
+                                        
+                                        
+
+                                    </table>
+                                    
+                                </div>
+                            </div>
+
+
+                            <div class="dropdown" style="padding: 20px;" >
+                                DEG/RAD
+                            <div id="DEG/RAD" class="dropdown-menu" style="padding: 20px;">
+                                
+                                
+                                    <table>
+                                        <tr style="justify-content: space-between;">
+                                            <td><button type="button" style="padding: 10px 10px;" name="DEG/RAD" id="DEG" value="DEG" onclick="deg_rad('deg')">DEG</button>
+                                            </td>
+                                            <td><button type="button" style="padding: 10px 10px;" name="DEG/RAD" id="RAD" value="RAD" onclick="deg_rad('rad')">RAD</button>
+                                            </td>
+                                        </tr>
+                                        <tr style="justify-content: space-between;">
+                                            <td><button type="button" style="padding: 10px 10px;" name="DEG/RAD" id="RESET" value="RESET" onclick="onReset('rad')">RESET</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                </div>
+                                    <!-- <select name="" id="">
+                                        <option value="DEG" onclick="deg_rad('deg')">DEG</option>
+                                        <option value="RAD" onclick="deg_rad('rad')">RAD</option>
+                                    </select> -->
+                                    <!-- <div  style="padding: 20px;" id="DEG/RAD_2">
+                                        DEG/RAD
+                                        
+                                            <table>
+                                                <tr style="justify-content: space-between;">
+                                                    <td><button type="button" style="padding: 10px 10px; " onclick="deg_reg('deg')">DEG</button>
+                                                    </td>
+                                                    <td><button type="button" style="padding: 10px 10px;" onclick="deg_reg('rad')">RAD</button>
+                                                    </td>
+                                                </tr> 
+                                             </table>
+                                            </div> -->
+
+                            
+
+                        
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" onclick ="showOnClick('pi')">
+                        pi
+                    </button>
+                    <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;"onclick ="showOnClick('e')">
+                        e
+                    </button>
+                    <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" onclick = "Clear('C')">
+                        C
+                    </button>
+                    <button type="button" class="button_operators" style="width: 24.5%; font-size: 25px; cursor: pointer;" onclick ="Clear('backspace')">
+                        backspace
+                    </button>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;">
+                    (
+                </button>
+                <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" >
+                    )
+                </button>
+                <button  type="button" id="fact" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" onclick ="factorial()">
+                    n!
+                </button>
+                <button type="button" class="button_operators" style="width: 24.5%; font-size: 25px; cursor: pointer;" onclick ="showOnClick('/')">
+                    &divide;
+                </button>
+                </td>
+            </tr>
+            <tr>
+                    
+                    <td>
+                        <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" onclick ="showOnClick('7')">
+                            7
+                        </button>
+                        <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" onclick ="showOnClick('8')" >
+                            8
+                        </button>
+                        <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" onclick ="showOnClick('9')">
+                            9
+                        </button>
+                        <button type="button" class="button_operators" style="width: 24.5%; font-size: 25px; cursor: pointer;" onclick ="showOnClick('*')">
+                            &times;
+                        </button>
+                    </td>
+            </tr>
+            <tr>
+                    <td>
+                        <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;"  onclick ="showOnClick('4')">
+                            4
+                        </button>
+                        <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;"  onclick ="showOnClick('5')">
+                            5
+                        </button>
+                        <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;"  onclick ="showOnClick('6')">
+                            6
+                        </button>
+                        <button type="button" class="button_operators" style="width: 24.5%; font-size: 25px; cursor: pointer;"  onclick ="showOnClick('-')">
+                            &minus;
+                        </button>
+                    </td>
+            </tr>
+            <tr>
+                    <td>
+                        <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" value="1" onclick ="showOnClick('1')">
+                            1
+                        </button>
+                        <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;"value="2" onclick="showOnClick(2)">
+                            2
+                        </button>
+                        <button type="button"  class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" value="3" onclick="showOnClick(3)">
+                            3
+                        </button>
+                        <button type="button"  class="button_operators" style="width: 24.5%; font-size: 25px; cursor: pointer;" value="+" onclick="showOnClick('+')">
+                            +      
+                        </button>
+                    </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer; " onclick="showOnClick('+/-')">
+                        &PlusMinus;
+                    </button>
+                    <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" onclick="showOnClick('0')">
+                        0
+                    </button>
+                    <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" onclick="showOnClick('.')">
+                        .
+                    </button>
+                    <button type="button" class="button_operators" style="width: 24.5%; font-size: 25px; cursor: pointer;" onclick="operate()">
+                        =     
+                    </button>
+                </td>
+
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer; " onclick="squareroot()">
+                    &radic;
+                </button>
+                <button type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" onclick="cuberoot()">
+                    &#8731;
+                </button>
+                <button id="logarithm" type="button" class="button" style="width: 24.9%; font-size: 25px; cursor: pointer;" onclick="log_10()">
+                    log()
+                </button>
+                <button type="button" class="button_operators" style="width: 24.5%; font-size: 25px; cursor: pointer;" onclick="log10_e()">
+                    ln()    
+                </button>
+            </td>
+
+    </tr>
+
+
+        </table>
+    </form>
+    
+
+</body>
+</html>
